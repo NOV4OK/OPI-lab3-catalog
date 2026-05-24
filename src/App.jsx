@@ -13,12 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
 
-const categoryIcons = {
-  book: <BookOutlined />,
-  movie: <VideoCameraOutlined />,
-  game: <ControlOutlined />
-};
-
+// Цвета оставляем снаружи, так как тут нет JSX-кода
 const categoryColors = {
   book: '#177ddc',
   movie: '#cb2b83',
@@ -29,6 +24,13 @@ const App = () => {
   const { items, currentFilter, setFilter, updateRating, addItem, removeItem } = useCatalogStore();
   const [newName, setNewName] = useState('');
   const [newType, setNewType] = useState('book');
+
+  // Перенесли иконки ВНУТРЬ компонента, чтобы тесты на GitHub не падали!
+  const categoryIcons = {
+    book: <BookOutlined />,
+    movie: <VideoCameraOutlined />,
+    game: <ControlOutlined />
+  };
 
   const handleAdd = () => {
     if (!newName.trim()) return;
@@ -64,7 +66,7 @@ const App = () => {
         </Header>
 
         <Content style={{ padding: '40px 50px' }}>
-          {/* Блок добавления как у одногруппника */}
+          {/* Блок добавления */}
           <div style={{ textAlign: 'center', marginBottom: 50 }}>
             <Title level={2}>✨ Добавить в коллекцию</Title>
             <Space.Compact style={{ width: '100%', maxWidth: 600 }}>

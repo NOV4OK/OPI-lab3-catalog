@@ -4,20 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "test": "vitest run",
-  "coverage": "vitest run --coverage"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
   "dependencies": {
     "@ant-design/icons": "^6.1.1",
     "antd": "^6.3.6",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "uuid": "^14.0.0",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
